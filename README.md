@@ -12,7 +12,7 @@ Install Go.
 Install Rust.
 Install Ollama for local llm running and code suggestions/ai chat.
 Install ripgrep for faster telescope search
-Install JetBrains Mono fonts
+Install JetBrains Mono nerd fonts; NERD FONTS, not the default one!
 
 ## Usage
 
