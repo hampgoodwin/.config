@@ -11,6 +11,8 @@ Install NVM to manage node versions, then install a global node version. This wi
 Install Go.
 Install Rust.
 Install Ollama for local llm running and code suggestions/ai chat.
+Install ripgrep for faster telescope search
+Install JetBrains Mono fonts
 
 ## Usage
 
