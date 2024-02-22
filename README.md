@@ -16,6 +16,7 @@ Install JetBrains Mono nerd fonts; NERD FONTS, not the default one!
 Install Bat; use over cat
 Install yaml-language-server via brew; currently install via mason will run the language server which does _not_ play nicely with kubernetes/helm files.
 Install zoxide `brew install zoxide`
+  - install fzf as dep for zoxide interactive zi or cdi `brew install fzf`
 
 ## Usage
 
