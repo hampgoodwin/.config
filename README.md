@@ -7,17 +7,26 @@ it's important to note that everything should live in $XDG_CONFIG_HOME.
 
 ## Dependencies
 
-Install NVM to manage node versions, then install a global node version. This will allow our mason.nvim to install tsserver, eslint_d and prettier_d.
-Install Go.
-Install Rust.
-Install Ollama for local llm running and code suggestions/ai chat.
-Install ripgrep for faster telescope search
-Install JetBrains Mono nerd fonts; NERD FONTS, not the default one!
-Install Bat; use over cat
-Install yaml-language-server via brew; currently install via mason will run the language server which does _not_ play nicely with kubernetes/helm files.
-Install zoxide `brew install zoxide`
+- Install NVM to manage node versions, then install a global node version. This will allow our mason.nvim to install tsserver, eslint_d and prettier_d.
+
+- Install Go.
+
+- Install Rust.
+
+- Install Ollama for local llm running and code suggestions/ai chat.
+
+- Install ripgrep for faster telescope search
+
+- Install JetBrains Mono nerd fonts; NERD FONTS, not the default one!
+
+- Install Bat; use over cat
+
+- Install yaml-language-server via brew; currently install via mason will run the language server which does _not_ play nicely with kubernetes/helm files.
+
+- Install zoxide `brew install zoxide`
   - install fzf as dep for zoxide interactive zi or cdi `brew install fzf`
-Install tree `brew install tree`
+
+- Install tree `brew install tree`
 
 ## Usage
 
