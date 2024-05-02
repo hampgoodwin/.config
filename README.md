@@ -26,7 +26,40 @@ it's important to note that everything should live in $XDG_CONFIG_HOME.
 - Install zoxide `brew install zoxide`
   - install fzf as dep for zoxide interactive zi or cdi `brew install fzf`
 
-- Install tree `brew install tree`
+- Install fzf `brew install fzf` for better fuzzy finding in terminal
+
+- Install fd `brew install fd` for better find command
+
+- Install git-delta for better git diff `brew install git-delta`
+  - update .gitconfig according to https://www.josean.com/posts/7-amazing-cli-tools
+
+```
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+```
+
+- install eza for different ls `brew install eza`
+
+- install tldr (rust) for a friendlier man pages `brew install tlrc`
+
 
 ## Usage
 
