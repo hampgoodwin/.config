@@ -33,6 +33,8 @@ it's important to note that everything should live in $XDG_CONFIG_HOME.
 - Install git-delta for better git diff `brew install git-delta`
   - update .gitconfig according to https://www.josean.com/posts/7-amazing-cli-tools
 
+- Install imagemagick `brew install imagemagick` for 3rd/image.nvim support
+
 ```
 [core]
     pager = delta
