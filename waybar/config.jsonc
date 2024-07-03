@@ -7,24 +7,36 @@
     "spacing": 10, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-//	"custom/waybar-mpris"
+        "gamemode",
         "mpris"
     ],
     "modules-center": [
+        "tray"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
+        "pulseaudio/slider",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         "keyboard-state",
-        "clock",
-        "tray"
+        "clock"
     ],
     // Modules Configuration
+    // LEFT
+    "gamemode": {
+        "format": "{glyph}",
+        "format-alt": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
+    },
     "mpris": {
 	"player": "spotify",
 	"format": "{player_icon}{status_icon}{artist} - {title} ({position}/{length})",
@@ -39,20 +51,6 @@
     	},
     	"ignored-players": ["firefox"]
     },
-//    "custom/waybar-mpris": {
-//        "return-type": "json",
-//        "exec": "waybar-mpris --position --autofocus",
-//        "on-click": "waybar-mpris --send toggle",
-//        // This option will switch between players on right click.
-//            "on-click-right": "waybar-mpris --send player-next",
-//        // The options below will switch the selected player on scroll
-//            // "on-scroll-up": "waybar-mpris --send player-next",
-//            // "on-scroll-down": "waybar-mpris --send player-prev",
-//        // The options below will go to next/previous track on scroll
-//            // "on-scroll-up": "waybar-mpris --send next",
-//            // "on-scroll-down": "waybar-mpris --send prev",
-//        "escape": true,
-//    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -63,17 +61,17 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "icon-size": 35,
+        "spacing": 20
     },
     "clock": {
         "timezone": "America/Denver",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d} "
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage}%  ",
+        "tooltip": true
     },
     "memory": {
         "format": "{}% "
@@ -83,34 +81,27 @@
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon} ",
         "format-icons": ["", "", ""]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}   {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-wifi": "{essid} {icon}", "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip": true,
         "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP) ",
+        "format-linked": "{ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+            "wifi": " "
+        },
+        "on-click": "kitty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
@@ -125,4 +116,9 @@
         },
         "on-click": "pavucontrol"
     },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    }
 }
