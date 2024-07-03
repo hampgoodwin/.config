@@ -9,11 +9,11 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-combi: "❤️Open";
+    display-combi: "❤️ Opn";
     display-drun: "📄 App";
-    display-run: "🏃Run";
-    display-window: " ✨ Win";
-    display-Network: " 🛜 Ntk";
+    display-run: "🏃 Run";
+    display-window: "✨ Win";
+    display-Network: "🛜 Ntk";
     sidebar-mode: true;
 }
 
