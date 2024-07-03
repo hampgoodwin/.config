@@ -2,28 +2,30 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
     "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 10, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "gamemode",
-        "mpris"
+        "hyprland/workspaces",
     ],
     "modules-center": [
-        "tray"
+        "mpris",
+        "tray",
     ],
     "modules-right": [
         "pulseaudio",
-        "pulseaudio/slider",
         "network",
-        "cpu",
-        "memory",
         "temperature",
         "keyboard-state",
-        "clock"
+        "clock",
     ],
     // Modules Configuration
+
     // LEFT
     "gamemode": {
         "format": "{glyph}",
@@ -37,6 +39,28 @@
         "tooltip": true,
         "tooltip-format": "Games running: {count}"
     },
+    "hyprland/window": {
+      "format": "{}",
+      "max-length": 35,
+      "rewrite": {
+        "": "Hyprland"
+      },
+      "separate-outputs": true,
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": " ",
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4, // 5 workspaces by default on every monitor
+        "HDMI-A-1": 3 // but only three on HDMI-A-1
+      },
+    },
+
+    // MIDDLE
     "mpris": {
 	"player": "spotify",
 	"format": "{player_icon}{status_icon}{artist} - {title} ({position}/{length})",
@@ -51,52 +75,12 @@
     	},
     	"ignored-players": ["firefox"]
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "tray": {
         "icon-size": 35,
         "spacing": 20
     },
-    "clock": {
-        "timezone": "America/Denver",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d} "
-    },
-    "cpu": {
-        "format": "{usage}%  ",
-        "tooltip": true
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon} ",
-        "format-icons": ["", "", ""]
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} {icon}", "format-ethernet": "{ipaddr}/{cidr}",
-        "tooltip": true,
-        "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "⚠ Disconnected",
-        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "format-icons": {
-            "wifi": " "
-        },
-        "on-click": "kitty -e nmtui"
-    },
+
+    // RIGHT
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}  {format_source}",
@@ -116,9 +100,38 @@
         },
         "on-click": "pavucontrol"
     },
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal"
-    }
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} {icon}", "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip": true,
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+            "wifi": " "
+        },
+        "on-click": "kitty -e nmtui"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon} ",
+        "format-icons": ["", "", ""]
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+   "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+    },
 }
