@@ -4,3 +4,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:hampgoodwin/nvim.git
+[submodule "nixos-config"]
+	path = nixos-config
+	url = git:@github.com:hampgoodwin/nixos-config
