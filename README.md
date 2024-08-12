@@ -1,12 +1,18 @@
 # .config
 
-my dot files
-
-it's important to note that everything should live in $XDG_CONFIG_HOME.
-
+My dotfiles based on configurations living in $XDG_CONFIG_HOME or ~/.config
 
 ## Dependencies
 
+### nvim
+
+NVIM is configured to use various language, language servers, formatters, and linters. Previously I used nvim-mason to manage these dependencies. However, that seems like it is not in the purview of an IDE/text-editor to manage. As such, everyone is expected to manage these installations on their own.
+
+I am working on a nixos-config that will work on both linux and macos silicon such that nix-darwin and nix will provide the dependencies required.
+
+---
+
+In order to get my diff displaying as desired, the below should be used in my global git config
 ```
 [core]
     pager = delta
@@ -35,6 +41,3 @@ it's important to note that everything should live in $XDG_CONFIG_HOME.
 
 Create a symlink from you $XDG_CONFIG_HOME/zsh/.zshenv to your $HOME/.zshenv . Unfortunately zsh will only look for this env file in the home directory. However, once it is in place, everything else should work well!
 
-## To Do
-
-Get a better local secrets management solution.. I tried enpass-cli, but that was a bit difficult since it prompts for a PW in all scenarios and chatgpt nvim plugin doesn't handle the prompt.
