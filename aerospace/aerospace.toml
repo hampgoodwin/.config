@@ -4,12 +4,15 @@
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = []
+after-login-command = [
+]
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+  'exec-and-forget /run/current-system/sw/bin/borders active_color=0xff33ccfe inactive_color=0xff59595A width=5.0'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -60,8 +63,8 @@ automatically-unhide-macos-hidden-apps = false
     inner.horizontal = 10
     inner.vertical =   10
     outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
+    outer.bottom =     5
+    outer.top =        5
     outer.right =      10
 
 # 'main' binding mode declaration
