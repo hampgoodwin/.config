@@ -59,3 +59,7 @@ I could probably add this to my .config with some instructs to cop to wherever I
 [diff]
     colorMoved = default
 ```
+
+### nvim
+
+We use some lsp configurations and toolings in nvim which nvim doesn't provide. As such the package manager for the system should provide these things. Some examples of things we want can be found in the nixos-config flake files. Worst case, nvim will give a diagnostic error when starting up indicating what is missing.
