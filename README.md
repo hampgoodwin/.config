@@ -8,11 +8,11 @@ As a means of easily separating what lives in my actual .config between my osx a
 
 ## Mac Install
 
-Use the determinate systems pkg installer. This is found on the "get started" instructions for determinate systems. For some reason, the curl install.sh no longer works.
+Navigate to the determinate systems [nix-installer](https://github.com/DeterminateSystems/nix-installer) and then use the [macos package installer](https://install.determinate.systems/determinate-pkg/stable/Universal) to install nix on MacOS. The link as of 20250729 was in a "tips" section on the nix-installer readme.
 
 ## Linux
 
-Just use nixos. I should, at some point, add a node about enabling flakes. Theres some recent discourse around removing flakes from nix completely. I think this would create a schism. They should be support OOTB. 
+I would just recommend using nixos, however if this is is not possible, using the [nix-installer](https://github.com/DeterminateSystems/nix-installer) should be sufficient!
 
 ## Dependencies
 
@@ -23,6 +23,14 @@ I strive to manage all dependencies in my nix configurations/flakes. I would pre
 ## Configurations
 
 Create a symlink from you $XDG_CONFIG_HOME/zsh/.zshenv to your $HOME/.zshenv . Unfortunately zsh will only look for this env file in the home directory. However, once it is in place, everything else should work well!
+
+### bat
+
+After symlinking the bat configuration directory to $XDG_CONFIG_HOME/bat, we need to instruct bat to rebuild it's cache which will bring in the theme: `bat cache --build`
+
+### kitty
+
+kitty is configured to automatically pick between a light, dark, and no preference themes based on the [OS's light/dark themeing](https://sw.kovidgoyal.net/kitty/kittens/themes/#change-color-themes-automatically-when-the-os-switches-between-light-and-dark). For MacoS this means you need to configure Night Shift.
 
 ### git diff using delta
 
@@ -46,7 +54,7 @@ I could probably add this to my .config with some instructs to cop to wherever I
     # light = true
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [diff]
     colorMoved = default
