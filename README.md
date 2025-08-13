@@ -14,6 +14,7 @@ Navigate to the determinate systems [nix-installer](https://github.com/Determina
 
 - enpass
 - wireguard
+- discord
 
 ## Linux
 
