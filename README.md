@@ -10,6 +10,11 @@ As a means of easily separating what lives in my actual .config between my osx a
 
 Navigate to the determinate systems [nix-installer](https://github.com/DeterminateSystems/nix-installer) and then use the [macos package installer](https://install.determinate.systems/determinate-pkg/stable/Universal) to install nix on MacOS. The link as of 20250729 was in a "tips" section on the nix-installer readme.
 
+### Download outside Nix
+
+- enpass
+- wireguard
+
 ## Linux
 
 I would just recommend using nixos, however if this is is not possible, using the [nix-installer](https://github.com/DeterminateSystems/nix-installer) should be sufficient!
