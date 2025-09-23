@@ -15,6 +15,7 @@ Navigate to the determinate systems [nix-installer](https://github.com/Determina
 - enpass
 - wireguard
 - discord
+- slack
 
 ## Linux
 
@@ -24,47 +25,17 @@ I would just recommend using nixos, however if this is is not possible, using th
 
 I strive to manage all dependencies in my nix configurations/flakes. I would prefer to stay away from managing various dependency mangement tools, or split between such. As such, I will try to _not_ manage anything directly via brew or mac install app. For NixOS Nix configuration _is_ the package manager.
 
+However, there are some gui-heavy apps, like slack (or whatever appears in the dock, really), that are easier to just download via app store or dmg install.
+
 ---
 
 ## Configurations
 
 Create a symlink from you $XDG_CONFIG_HOME/zsh/.zshenv to your $HOME/.zshenv . Unfortunately zsh will only look for this env file in the home directory. However, once it is in place, everything else should work well!
 
-### bat
-
-After symlinking the bat configuration directory to $XDG_CONFIG_HOME/bat, we need to instruct bat to rebuild it's cache which will bring in the theme: `bat cache --build`
-
 ### kitty
 
 kitty is configured to automatically pick between a light, dark, and no preference themes based on the [OS's light/dark themeing](https://sw.kovidgoyal.net/kitty/kittens/themes/#change-color-themes-automatically-when-the-os-switches-between-light-and-dark). For MacoS this means you need to configure Night Shift.
-
-### git diff using delta
-
-In order to get my diff displaying as desired, the below should be used in my global git config
-I could probably add this to my .config with some instructs to cop to wherever I need to?
-
-```sh
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    side-by-side = true
-
-
-    # delta detects terminal colors automatically; set one of these to disable auto-detection
-    # dark = true
-    # light = true
-
-[merge]
-    conflictstyle = zdiff3
-
-[diff]
-    colorMoved = default
-```
 
 ### nvim
 
