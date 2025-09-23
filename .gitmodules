@@ -6,3 +6,6 @@
 	path = nixos-config
 	url = git@github.com:hampgoodwin/nixos-config.git
 	branch = main
+[submodule "zdotdir"]
+	path = zdotdir
+	url = git@github.com:hampgoodwin/zdotdir.git
