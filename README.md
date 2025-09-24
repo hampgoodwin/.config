@@ -12,7 +12,7 @@ Navigate to the determinate systems [nix-installer](https://github.com/Determina
 
 ### Download outside Nix
 
-- enpass
+- chrome
 - wireguard
 - discord
 - scroll reverser
