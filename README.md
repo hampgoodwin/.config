@@ -15,7 +15,7 @@ Navigate to the determinate systems [nix-installer](https://github.com/Determina
 - enpass
 - wireguard
 - discord
-- slack
+- scroll reverser
 
 ## Linux
 
