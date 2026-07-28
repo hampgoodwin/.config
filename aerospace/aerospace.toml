@@ -13,6 +13,7 @@ after-login-command = [
 after-startup-command = [
   'exec-and-forget /run/current-system/sw/bin/borders active_color=0xff33ccfe inactive_color=0xff59595A width=5.0'
 ]
+config-version = 2
 
 # Start AeroSpace at login
 start-at-login = true
