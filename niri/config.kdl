@@ -49,8 +49,10 @@ binds {
     Mod+L { spawn "noctalia" "msg" "session" "lock"; }
 
     // Window controls
-    Mod+Q { close-window; }
-    Mod+F { fullscreen-window; }
+    Mod+Q       { close-window; }
+    Mod+F       { fullscreen-window; }
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Focus movement
     Mod+Left  { focus-column-left; }
